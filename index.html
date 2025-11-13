@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мопс-Баттл</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">МОПС-БАТТЛ</div>
+            <nav class="navigation">
+                <a href="#" class="nav-link active-link" data-page="home">Главная</a>
+                <a href="#" class="nav-link" data-page="roulette">Рулетка</a>
+                <a href="#" class="nav-link" data-page="inventory">Инвентарь</a>
+            </nav>
+            <div class="balance-container">
+                <div class="balance-header">Баланс: <span id="balance-header">500</span>₽</div>
+                <button id="add-balance-btn" class="add-balance-btn">+</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="page active-page" id="home-page">
+            <div class="hero-section">
+                <h1>Добро пожаловать в Мопс-Баттл</h1>
+                <p>Испытай свою удачу и собери коллекцию самых редких мопсов во вселенной.</p>
+                <button class="cta-button" id="go-to-roulette-btn">Перейти к рулетке</button>
+            </div>
+        </section>
+
+        <section class="page" id="roulette-page">
+            <div class="case-container">
+                <div class="roulette-wrapper">
+                    <div class="pointer"></div>
+                    <div class="roulette" id="roulette"></div>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="open-case-btn">Открыть кейс за 100₽</button>
+            </div>
+        </section>
+
+        <section class="page" id="inventory-page">
+            <h2>Ваш Инвентарь</h2>
+            <p class="inventory-subtitle">Здесь хранятся все ваши мопсы. Продавайте их, чтобы открыть больше кейсов.</p>
+            <div class="inventory-grid" id="inventory-grid"></div>
+            <p id="inventory-empty-message" class="inventory-empty">Ваш инвентарь пуст. Откройте кейс!</p>
+        </section>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2024 Мопс-Баттл. Все права защищены мопсами.</p>
+            <a href="https://t.me/lzrnx" target="_blank" rel="noopener noreferrer" class="footer-tg-link">Telegram</a>
+        </div>
+    </footer>
+
+    <div id="result-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 id="result-rarity"></h2>
+            <p id="result-name"></p>
+            <div class="result-image-container">
+                <img id="result-image" src="" alt="Выпавший мопс">
+            </div>
+            <div class="modal-actions">
+                <button id="sell-item-btn" class="modal-btn sell"></button>
+                <button id="claim-item-btn" class="modal-btn claim">Забрать</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="add-balance-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h2>Пополнить баланс</h2>
+            <p>Выберите сумму для бесплатного пополнения:</p>
+            <div class="balance-options">
+                <button class="balance-option-btn" data-amount="100">+100₽</button>
+                <button class="balance-option-btn" data-amount="300">+300₽</button>
+                <button class="balance-option-btn" data-amount="500">+500₽</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="buy-sound" src="sounds/buy.mp3" preload="auto"></audio>
+    <audio id="open-sound" src="sounds/open.mp3" preload="auto"></audio>
+    <audio id="roll-sound" src="sounds/roll.mp3" preload="auto"></audio>
+    <audio id="sale-sound" src="sounds/sale.mp3" preload="auto"></audio>
+    <audio id="win-sound" src="sounds/win.mp3" preload="auto"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
